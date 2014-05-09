@@ -16,4 +16,4 @@ Please follow the steps below to get this site set up for local development.
 
 ## Goal
 
-Get all of the specs to pass.
+Get all of the specs to pass. For hints, you can see the `solutions` branch.
