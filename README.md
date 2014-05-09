@@ -11,6 +11,7 @@ Please follow the steps below to get this site set up for local development.
 
 1. Fork and clone the repository.
 1. Create local databases `rake db:create:all`
+1. Migrate databases `rake db:migrate`
 1. Run the specs `rake spec`
 
 ## Goal
