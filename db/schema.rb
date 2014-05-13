@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513211456) do
+ActiveRecord::Schema.define(version: 20140513213130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,25 @@ ActiveRecord::Schema.define(version: 20140513211456) do
 
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
 
+  create_table "magazines", force: true do |t|
+    t.string "name"
+  end
+
   create_table "orders", force: true do |t|
     t.string "number"
   end
+
+  create_table "subscribers", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.string "magazine_id"
+    t.string "subscriber_id"
+    t.date   "expires_on"
+  end
+
+  add_index "subscriptions", ["magazine_id"], name: "index_subscriptions_on_magazine_id", using: :btree
+  add_index "subscriptions", ["subscriber_id"], name: "index_subscriptions_on_subscriber_id", using: :btree
 
 end
